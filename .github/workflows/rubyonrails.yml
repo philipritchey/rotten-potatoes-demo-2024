@@ -11,41 +11,6 @@ on:
   pull_request:
     branches: [ "main" ]
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    services:
-      postgres:
-        image: postgres:11-alpine
-        ports:
-          - "5432:5432"
-        env:
-          POSTGRES_DB: rails_test
-          POSTGRES_USER: rails
-          POSTGRES_PASSWORD: password
-    env:
-      RAILS_ENV: test
-      DATABASE_URL: "postgres://rails:password@localhost:5432/rails_test"
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      # Add or replace dependency steps here
-      - name: Install Ruby and gems
-        uses: ruby/setup-ruby@55283cc23133118229fd3f97f9336ee23a179fcf # v1.146.0
-        with:
-          bundler-cache: true
-      # Add or replace database setup steps here
-      - name: Set up database schema
-        run: bin/rails db:schema:load
-      # Add or replace test runners here
-      - name: Run Cucumber tests
-        run: bundle exec cucumber
-      - name: Run RSpec tests
-        run: bundle exec rspec
-      - name: install bc
-        run: sudo apt install bc jq
-      - name: Run coverage check
-        run: test $(echo "$(jq '.result.line' coverage/.last_run.json) >= 90" | bc -l) -eq "1"
-
   lint:
     runs-on: ubuntu-latest
     steps:
@@ -62,3 +27,41 @@ jobs:
         run: bin/brakeman -q -w2
       - name: Lint Ruby files
         run: bin/rubocop --parallel
+        
+  test:
+    runs-on: ubuntu-latest
+    #services:
+    #  postgres:
+    #    image: postgres
+    #    ports:
+    #      - "5432:5432"
+    #    env:
+    #      POSTGRES_DB: rails_test
+    #      POSTGRES_USER: rails
+    #      POSTGRES_PASSWORD: password
+    env:
+      RAILS_ENV: test
+      #DATABASE_URL: "postgres://rails:password@localhost:5432/rails_test"
+      CC_TEST_REPORTER_ID: afa7898b40ad0abe2b753ca0ffc6b0de84377cafd5e878b1352e2debb8dee067
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      # Add or replace dependency steps here
+      - name: Install Ruby and gems
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - name: Set up database schema
+        run: bin/rails db:schema:load
+      - name: Notify of a pending report
+        run: bin/cc-test-reporter before-build
+      - name: Run tests
+        run: bundle exec rake
+      - name: Format coverage
+        run: bin/cc-test-reporter format-coverage -t simplecov
+      - name: Upload coverage
+        run: bin/cc-test-reporter upload-coverage
+      - name: Install bc for coverage check
+        run: sudo apt install bc jq
+      - name: Run coverage check
+        run: test $(echo "$(jq '.result.line' coverage/.last_run.json) >= 90" | bc -l) -eq "1"     
