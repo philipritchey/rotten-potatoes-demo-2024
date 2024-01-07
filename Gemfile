@@ -60,6 +60,9 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+
+  gem "rubocop"
+  gem "rubycritic"
 end
 
 group :test do
@@ -70,5 +73,6 @@ group :test do
   # database_cleaner is not mandatory, but highly recommended
   gem 'database_cleaner'
   gem "sqlite3"
-  gem "rspec"
+  gem "rspec-rails"
+  gem 'simplecov', require: false
 end
