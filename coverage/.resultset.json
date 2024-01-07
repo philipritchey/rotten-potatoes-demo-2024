@@ -416,11 +416,320 @@
         ]
       }
     },
-    "timestamp": 1704645359
+    "timestamp": 1704650736
   },
   "RSpec": {
     "coverage": {
+      "/home/pcr/rotten-potatoes/config/environment.rb": {
+        "lines": [
+          null,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "/home/pcr/rotten-potatoes/config/application.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/pcr/rotten-potatoes/config/boot.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1
+        ]
+      },
+      "/home/pcr/rotten-potatoes/config/environments/test.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/home/pcr/rotten-potatoes/config/initializers/assets.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/pcr/rotten-potatoes/config/initializers/content_security_policy.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/pcr/rotten-potatoes/config/initializers/filter_parameter_logging.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/pcr/rotten-potatoes/config/initializers/inflections.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/pcr/rotten-potatoes/config/initializers/permissions_policy.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/pcr/rotten-potatoes/config/routes.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/pcr/rotten-potatoes/features/step_definitions/form_steps.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          0,
+          null
+        ]
+      },
+      "/home/pcr/rotten-potatoes/features/step_definitions/movie_steps.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null
+        ]
+      },
+      "/home/pcr/rotten-potatoes/features/step_definitions/navigating_steps.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          null
+        ]
+      },
+      "/home/pcr/rotten-potatoes/features/step_definitions/querying_steps.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null
+        ]
+      }
     },
-    "timestamp": 1704645366
+    "timestamp": 1704649976
   }
 }
