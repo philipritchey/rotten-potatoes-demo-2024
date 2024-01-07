@@ -15,5 +15,5 @@ Then('I should be on the {string} page for the movie {string}') do |action, movi
 end
 
 Given('movie with title {string} exists') do |movie_title|
-    pending # Write code here that turns the phrase above into concrete actions
+    Movie.create title: movie_title
 end
