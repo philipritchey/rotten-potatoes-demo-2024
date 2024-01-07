@@ -42,9 +42,9 @@ jobs:
       - name: Run RSpec tests
         run: bundle exec rspec
       - name: install bc
-        run: sudo apt install bc
+        run: sudo apt install bc jq
       - name: Run coverage check
-        run: test $(echo "$(grep line coverage/.last_run.json | cut -d: -f2) >= 90" | bc -l) -eq "1"
+        run: test $(echo "$(jq '.result.line' coverage/.last_run.json) >= 90" | bc -l) -eq "1"
 
   lint:
     runs-on: ubuntu-latest
