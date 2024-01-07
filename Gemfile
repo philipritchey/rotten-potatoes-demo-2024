@@ -75,4 +75,5 @@ group :test do
   gem "sqlite3"
   gem "rspec-rails"
   gem 'simplecov', require: false
+  gem "bundler-audit"
 end
