@@ -8,8 +8,10 @@ gem "rails", "~> 7.1.2"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
-# Use postgresql as the database for Active Record
-gem "pg", "~> 1.1"
+group :development, :production do
+  # Use postgresql as the database for Active Record
+  gem "pg", "~> 1.1"
+end
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
@@ -58,10 +60,19 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+
+  gem "rubocop"
+  gem "rubycritic"
 end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+  gem 'cucumber-rails', require: false
+  # database_cleaner is not mandatory, but highly recommended
+  gem 'database_cleaner'
+  gem "sqlite3"
+  gem "rspec-rails"
+  gem 'simplecov', require: false
 end
