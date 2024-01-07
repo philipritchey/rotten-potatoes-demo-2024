@@ -28,7 +28,7 @@ Scenario: update a movie
 Scenario: delete a movie
     Given movie with title "Alien" exists
     And I am on the "show" page for the movie "Alien"
-    When I click "delete"
+    When I click "Destroy this movie"
     Then I should be on the "movie index" page
-    And I should see "movie deleted"
+    And I should see "Movie was successfully destroyed."
     And I should not see "Alien"

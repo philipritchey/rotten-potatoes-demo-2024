@@ -12,7 +12,7 @@ Then('I should be on the {string} page for the movie {string}') do |action, movi
     movie = Movie.find_by title: movie_title
     case action
     when "show"
-        expect(page).to have_current_path(movie_path(movie))
+        expect(page).to have_current_path movie_path(movie)
     end
 end
 
