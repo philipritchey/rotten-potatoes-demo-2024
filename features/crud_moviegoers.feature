@@ -20,11 +20,11 @@ Scenario: read a moviegoer
     And I should see "prof. ritchey"
 
 Scenario: update a moviegoer
-    Given moviegoer with "email" "pcr@tamu.edu" and "name" "prof. ritchey" exists
-    And I am on the "edit moviegoer" page for "pcr@tamu.edu"
-    When I fill in "name" with "philip"
-    And I click "submit"
-    Then I should be on the "show moviegoer" page for "pcr@tamu.edu"
+    Given moviegoer with email "pcr@tamu.edu" and name "prof. ritchey" exists
+    And I am on the "edit" page for the moviegoer "pcr@tamu.edu"
+    When I fill in "Name" with "philip"
+    And I click "Update Moviegoer"
+    Then I should be on the "show" page for the moviegoer "pcr@tamu.edu"
     And I should see "philip"
 
 Scenario: delete a moviegoer
