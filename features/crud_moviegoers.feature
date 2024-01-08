@@ -13,10 +13,10 @@ Scenario: create a moviegoer
     And I should see "prof. ritchey"
 
 Scenario: read a moviegoer
-    Given moviegoer with "email" "pcr@tamu.edu" and "name" "prof. ritchey" exists
+    Given moviegoer with email "pcr@tamu.edu" and name "prof. ritchey" exists
     And I am on the "moviegoer index" page
     When I click on "prof. ritchey"
-    Then I should be on the "show moviegoer" page for "pcr@tamu.edu"
+    Then I should be on the "show" page for the moviegoer "pcr@tamu.edu"
     And I should see "prof. ritchey"
 
 Scenario: update a moviegoer

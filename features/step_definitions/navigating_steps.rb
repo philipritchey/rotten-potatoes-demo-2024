@@ -8,6 +8,8 @@ Given('I am on the {string} page') do |page_name|
     visit movies_path
   when "new moviegoer"
     visit new_moviegoer_path
+  when "moviegoer index"
+    visit moviegoers_path
   end
 end
 

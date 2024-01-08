@@ -5,3 +5,7 @@ Then('I should be on the {string} page for the moviegoer {string}') do |action, 
         expect(page).to have_current_path(moviegoer_path(moviegoer))
     end
 end
+
+Given('moviegoer with email {string} and name {string} exists') do |email, name|
+    Moviegoer.create email: email, name: name
+end
