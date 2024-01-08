@@ -3,6 +3,8 @@ Given('I am on the {string} page for the moviegoer {string}') do |action, movieg
     case action
     when "edit"
         visit edit_moviegoer_path(moviegoer)
+    when "show"
+        visit moviegoer_path(moviegoer)
     end
 end
 

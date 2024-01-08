@@ -28,9 +28,9 @@ Scenario: update a moviegoer
     And I should see "philip"
 
 Scenario: delete a moviegoer
-    Given moviegoer with "email" "pcr@tamu.edu" and "name" "prof. ritchey" exists
-    And I am on the "show moviegoer" page for "pcr@tamu.edu"
-    When I click "delete"
+    Given moviegoer with email "pcr@tamu.edu" and name "prof. ritchey" exists
+    And I am on the "show" page for the moviegoer "pcr@tamu.edu"
+    When I click "Destroy this moviegoer"
     Then I should be on the "moviegoer index" page
-    And I should see "moviegoer deleted"
+    And I should see "Moviegoer was successfully destroyed."
     And I should not see "pcr@tamu.edu"

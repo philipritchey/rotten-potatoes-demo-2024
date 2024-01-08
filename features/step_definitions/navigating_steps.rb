@@ -25,6 +25,8 @@ Then('I should be on the {string} page') do |page_name|
   case page_name
   when 'movie index'
     expect(page).to have_current_path movies_path
+  when "moviegoer index"
+    expect(page).to have_current_path moviegoers_path
   else
     expect(false).to be true
   end
