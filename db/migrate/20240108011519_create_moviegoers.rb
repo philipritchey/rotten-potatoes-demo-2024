@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# creates the moviegoers table
 class CreateMoviegoers < ActiveRecord::Migration[7.1]
   def change
     create_table :moviegoers do |t|

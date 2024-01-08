@@ -1,45 +1,47 @@
-require "test_helper"
+# frozen_string_literal: true
+
+require 'test_helper'
 
 class MoviegoersControllerTest < ActionDispatch::IntegrationTest
   setup do
     @moviegoer = moviegoers(:one)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get moviegoers_url
     assert_response :success
   end
 
-  test "should get new" do
+  test 'should get new' do
     get new_moviegoer_url
     assert_response :success
   end
 
-  test "should create moviegoer" do
-    assert_difference("Moviegoer.count") do
+  test 'should create moviegoer' do
+    assert_difference('Moviegoer.count') do
       post moviegoers_url, params: { moviegoer: { email: @moviegoer.email, name: @moviegoer.name } }
     end
 
     assert_redirected_to moviegoer_url(Moviegoer.last)
   end
 
-  test "should show moviegoer" do
+  test 'should show moviegoer' do
     get moviegoer_url(@moviegoer)
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'should get edit' do
     get edit_moviegoer_url(@moviegoer)
     assert_response :success
   end
 
-  test "should update moviegoer" do
+  test 'should update moviegoer' do
     patch moviegoer_url(@moviegoer), params: { moviegoer: { email: @moviegoer.email, name: @moviegoer.name } }
     assert_redirected_to moviegoer_url(@moviegoer)
   end
 
-  test "should destroy moviegoer" do
-    assert_difference("Moviegoer.count", -1) do
+  test 'should destroy moviegoer' do
+    assert_difference('Moviegoer.count', -1) do
       delete moviegoer_url(@moviegoer)
     end
 
