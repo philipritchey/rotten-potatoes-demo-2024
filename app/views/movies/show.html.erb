@@ -1,8 +1,10 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @movie %>
+<%= render @reviews %>
 
 <div>
+  <%= link_to "Add a review", new_movie_review_path(@movie) %> |
   <%= link_to "Edit this movie", edit_movie_path(@movie) %> |
   <%= link_to "Back to movies", movies_path %>
 
