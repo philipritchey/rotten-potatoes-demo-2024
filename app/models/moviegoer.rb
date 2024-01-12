@@ -2,5 +2,5 @@
 
 # represents a moviegoer
 class Moviegoer < ApplicationRecord
-  has_many :reviews
+    has_many :reviews
 end

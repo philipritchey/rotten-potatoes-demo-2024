@@ -55,10 +55,8 @@ jobs:
         run: bin/rails db:schema:load
       - name: Notify of a pending report
         run: bin/cc-test-reporter before-build
-      - name: Run Cucumber
-        run: bundle exec cucumber
-      - name: Run RSpec
-        run: bundle exec rspec
+      - name: Run tests
+        run: bundle exec rake
       - name: Format coverage
         run: bin/cc-test-reporter format-coverage -t simplecov
       - name: Upload coverage

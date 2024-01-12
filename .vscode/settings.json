@@ -1,7 +1,0 @@
-{
-    "cucumberautocomplete.steps": [
-        "features/step_definitions/*_steps.rb"
-    ],
-    "cucumberautocomplete.strictGherkinCompletion": true,
-    "cucumberautocomplete.smartSnippets": false
-}

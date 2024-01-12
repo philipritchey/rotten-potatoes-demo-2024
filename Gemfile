@@ -53,8 +53,6 @@ group :development, :test do
   gem 'brakeman'
   gem 'bundler-audit'
   gem 'debug', platforms: %i[mri windows]
-  gem 'rubocop'
-  gem 'rubycritic'
 end
 
 group :development do
@@ -66,6 +64,9 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+
+  gem 'rubocop'
+  gem 'rubycritic'
 end
 
 group :test do
