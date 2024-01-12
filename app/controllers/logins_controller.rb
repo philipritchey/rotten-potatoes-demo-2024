@@ -1,9 +1,12 @@
+# frozen_string_literal: true
+
+# controller for handling login
 class LoginsController < ApplicationController
   def index
     moviegoers = Moviegoer.select :email
     @emails = []
     moviegoers.each do |moviegoer|
-        @emails << [moviegoer.email]
+      @emails << [moviegoer.email]
     end
   end
 
@@ -17,6 +20,6 @@ class LoginsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def login_params
-    params.require(:email)  # since email is only value, this returns a string
+    params.require(:email) # since email is only value, this returns a string
   end
 end

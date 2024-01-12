@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,40 +12,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_08_072641) do
+ActiveRecord::Schema[7.1].define(version: 20_240_108_072_641) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "moviegoers", force: :cascade do |t|
-    t.string "email"
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_moviegoers_on_email", unique: true
-    t.index ["name"], name: "index_moviegoers_on_name"
+  create_table 'moviegoers', force: :cascade do |t|
+    t.string 'email'
+    t.string 'name'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['email'], name: 'index_moviegoers_on_email', unique: true
+    t.index ['name'], name: 'index_moviegoers_on_name'
   end
 
-  create_table "movies", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
-    t.string "rating"
-    t.datetime "release_date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'movies', force: :cascade do |t|
+    t.string 'title'
+    t.text 'description'
+    t.string 'rating'
+    t.datetime 'release_date'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "reviews", force: :cascade do |t|
-    t.string "title"
-    t.text "body"
-    t.integer "potatoes"
-    t.bigint "movie_id", null: false
-    t.bigint "moviegoer_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["movie_id"], name: "index_reviews_on_movie_id"
-    t.index ["moviegoer_id"], name: "index_reviews_on_moviegoer_id"
+  create_table 'reviews', force: :cascade do |t|
+    t.string 'title'
+    t.text 'body'
+    t.integer 'potatoes'
+    t.bigint 'movie_id', null: false
+    t.bigint 'moviegoer_id', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['movie_id'], name: 'index_reviews_on_movie_id'
+    t.index ['moviegoer_id'], name: 'index_reviews_on_moviegoer_id'
   end
 
-  add_foreign_key "reviews", "moviegoers"
-  add_foreign_key "reviews", "movies"
+  add_foreign_key 'reviews', 'moviegoers'
+  add_foreign_key 'reviews', 'movies'
 end

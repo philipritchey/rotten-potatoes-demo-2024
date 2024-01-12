@@ -17,7 +17,7 @@ Then('I should be on the {string} page for the movie {string}') do |action, movi
   case action
   when 'show'
     expect(page).to have_current_path movie_path(movie)
-  when "add review"
+  when 'add review'
     expect(page).to have_current_path new_movie_review_path(movie)
   end
 end

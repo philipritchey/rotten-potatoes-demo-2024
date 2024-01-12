@@ -75,8 +75,8 @@ group :test do
   gem 'selenium-webdriver'
   # database_cleaner is not mandatory, but highly recommended
   gem 'database_cleaner'
+  gem 'rails-controller-testing'
   gem 'rspec-rails'
   gem 'simplecov', require: false
   gem 'sqlite3'
-  gem 'rails-controller-testing'
 end
